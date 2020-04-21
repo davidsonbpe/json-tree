@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON TREE Formatter - Validator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <meta name="description" content="JSON TREE Formatter Validator by Davidsonbpe Web Apps Game Developer" />
+    <meta content="icon/mldpi.jpg" property="og:image" />
+    <meta content="icon/mldpi.jpg" name="twitter:image" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="JSON TREE Formatter - Validator" />
+    <meta name="apple-mobile-web-app-title" content="JSON TREE Formatter - Validator" />
+    <meta name="theme-color" content="#388938" />
+    <meta name="msapplication-navbutton-color" content="#a03d3d" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./icon/512.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="./icon/512.png" />
+    <link rel="icon" type="image/png" sizes="144x144" href="./icon/144.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="./icon/144.png" />
+    <link rel="icon" type="image/png" sizes="72x72" href="./icon/72.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="./icon/72.png" />
+    <link rel="icon" type="image/png" sizes="36x36" href="./icon/36.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="36x36" href="./icon/36.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" />
+    <link rel="stylesheet" href="css/angular-material.css" />
+    <link rel="stylesheet" href="css/docs.css" />
+    <link rel="stylesheet" href="css/angular-json-tree.css" />
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+
+    <div ng-controller="DemoCtrl as vm" layout="column" ng-cloak="" ng-app="app">
+
+        <section id="input-controls">
+            <span class="longo">JSON TREE</span>
+
+            <span class="json-url" ng-class="{'error': vm.json.badUrl}">
+                <input ng-model="vm.url" type="url" ng-focus="vm.json.badUrl = false" />
+                <button ng-click="vm.loadUrl()" ng-show="vm.json.url">Load URL</button>
+            </span>
+            <span class="json-file">
+                <label class="button" for="json-file-choose">Load File</label>
+                <input type="file" id="json-file-choose" fileread="vm.json.string" />
+            </span>
+        </section>
+        <section id="input" ng-class="{'error': error}">
+
+            <div class="error-modal" ng-show="vm.error.show">
+                <p class="info">{{vm.error.message}}</p><button class="close" ng-click="vm.error.show = false">Close</button>
+            </div>
+            <textarea ng-model="vm.json.string"></textarea>
+        </section>
+        <section id="output">
+            <json-tree object="json.object" start-expanded="true" />
+            <json-tree object="vm.json.object" start-expanded="true" />
+        </section>
+
+    </div>
+
+    
+    <a href="https://davidsonbpe.blogspot.com/" target="_blank" class="baaner"><img class="baanerpng" src="css/github.png" height="50" width="50"/></a>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/svg-assets-cache.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/angular-material.min.js"></script>
+    <script src="js/angular-json-tree.min.js"></script>
+    <script src="js/less.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
