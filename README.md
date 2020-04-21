@@ -1,2 +1,2 @@
 # json-tree
-JSON TREE Formatter - Validator
+JSON TREE Formatter - Validator.
